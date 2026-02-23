@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Mini Project</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    line-height:1.6;
+}
+
+/* HEADER */
+header{
+    background:#111;
+    color:white;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    font-size:22px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00bcd4;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(to right,#00bcd4,#2196f3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero button{
+    padding:12px 25px;
+    border:none;
+    background:white;
+    color:#2196f3;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    background:#111;
+    color:white;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.section-title{
+    font-size:28px;
+    margin-bottom:40px;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#f4f4f4;
+    padding:25px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    background:#e0f7fa;
+}
+
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project-box{
+    background:#ddd;
+    padding:60px 20px;
+    border-radius:8px;
+}
+
+/* CONTACT */
+.contact input, .contact textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact button{
+    padding:10px 20px;
+    background:#2196f3;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+    }
+    nav{
+        margin-top:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mini Project</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Welcome to My Website 🚀</h2>
+    <p>This is a small HTML CSS JS project</p>
+    <button onclick="scrollToSection('contact')">Get Started</button>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>We create modern and responsive websites using HTML, CSS and JavaScript.</p>
+</section>
+
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+        <div class="card">Web Design</div>
+        <div class="card">Frontend Development</div>
+        <div class="card">Backend Integration</div>
+        <div class="card">SEO Optimization</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Our Projects</h2>
+    <div class="projects">
+        <div class="project-box">Project 1</div>
+        <div class="project-box">Project 2</div>
+        <div class="project-box">Project 3</div>
+        <div class="project-box">Project 4</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button onclick="showMessage()">Send Message</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Mini Project | Designed with ❤️</p>
+</footer>
+
+<script>
+function scrollToSection(sectionId){
+    document.getElementById(sectionId).scrollIntoView({
+        behavior:'smooth'
+    });
+}
+
+function showMessage(){
+    alert("Thank you! Your message has been sent.");
+}
+</script>
+
+</body>
+</html>
